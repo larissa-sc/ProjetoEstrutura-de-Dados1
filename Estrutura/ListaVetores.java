@@ -1,4 +1,4 @@
-package Estrutura;
+package estrutura;
 
 public class ListaVetores {
 	String[] lista;
@@ -20,7 +20,7 @@ public class ListaVetores {
 
 	public void add(int indice, String elemento) {
 		indice = indice -1;
-		if(indice < 0 || indice >= tamanho){
+		if(indice < 0 || indice > tamanho){
 			System.out.println("Não é possível adicionar o elemento nesta posição.");
 		} else if(tamanho == lista.length) {
 			System.out.println("A lista está cheia.");
@@ -51,11 +51,12 @@ public class ListaVetores {
 	}
 	
 	public void imprimir() {
+		if (tamanho == 0) {
+			System.out.println("A lista está vazia.");
+		}
+		System.out.println("\n ");;
 		for (int i = 0; i < tamanho; i++) {
-			String elemento = lista[i];
-			System.out.println(elemento);
+			System.out.println(lista[i]);
 		}
 	}
 }
-
-
