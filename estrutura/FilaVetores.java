@@ -21,12 +21,12 @@ public class FilaVetores {
 	}
 	
 	public void add(String elemento) {
-		if (fila[fim] != null) {
+		if (fila[fim] != null) { //por ser uma fila circular, tem que verificar se a última posição está vazia para acrescentar algo
 			System.out.println("Fila cheia! Remova o primeiro da fila para adicionar o próximo");
 		} 
 		else {
 			fila[fim] = elemento;
-			fim = (fim + 1) % fila.length;
+			fim = (fim + 1) % fila.length;  //parte mais "difícil", vai fazer a fila ser circular, assim não precisando mover todos os elementos
 			tamanho++;
 		}
 	}
