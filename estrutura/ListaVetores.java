@@ -3,12 +3,14 @@ package estrutura;
 public class ListaVetores {
 	String[] lista;
 	int tamanho;
-	
+
+	// método onde foi definido o tamanho máximo de elementos que a lista recebe
 	public ListaVetores() {
 		this.lista = new String[10];
 		this.tamanho = 0;
 	}
 
+	// verifica se o índice existe na lista (vai ser medido em tamanho, pois o tamanho máximo não é o tamanho que a lista tem ao adicionar o item)
 	public void consultar(int indice) {
 		if (indice < 1 || indice > tamanho) {
 			System.out.println("Índice não localizado na lista.");
@@ -19,10 +21,10 @@ public class ListaVetores {
 	}
 
 	public void add(int indice, String elemento) {
-		indice = indice -1;
-		if(indice < 0 || indice > tamanho){
+		indice = indice -1;  //uso para assumir o índice correto em código
+		if(indice < 0 || indice > tamanho){   //quando o índice é maior que o tamanho da lista, não pode add
 			System.out.println("Não é possível adicionar o elemento nesta posição.");
-		} else if(tamanho == lista.length) {
+		} else if(tamanho == lista.length) {  //tamanho vai somando na implementação até igualar a capacidade máxima
 			System.out.println("A lista está cheia.");
 		} else {
 			for (int i = tamanho; i > indice; i--) {
